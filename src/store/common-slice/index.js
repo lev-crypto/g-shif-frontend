@@ -10,7 +10,7 @@ export const getFeatureImages = createAsyncThunk(
   "/order/getFeatureImages",
   async () => {
     const response = await axios.get(
-      `https://backend-wheat-three.vercel.app/api/common/feature/get`
+      `${import.meta.env.VITE_BASE_URL}/api/common/feature/get`
     );
 
     return response.data;
@@ -21,7 +21,7 @@ export const addFeatureImage = createAsyncThunk(
   "/order/addFeatureImage",
   async (image) => {
     const response = await axios.post(
-      `https://backend-wheat-three.vercel.app/api/common/feature/add`,
+      `${import.meta.env.VITE_BASE_URL}/api/common/feature/add`,
       { image }
     );
 
